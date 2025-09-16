@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 30px 40px;
+    background: linear-gradient(90deg, #0a1613, #14221d 50%, #2a1f18);
+    color: #e6f0e8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0;
+    color: #f0f7f4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 4px 0 0;
+    color: #c2d1cb;
+}
