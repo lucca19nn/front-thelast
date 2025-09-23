@@ -1,11 +1,24 @@
-import Header from "./components/header/Header";
+import Header from './components/header/Header'; 
+import './globals.css';
+
+export const metadata = {
+  title: 'The Last of Us Fan Site',
+  description: 'Criado com Next.js',
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-br">
       <body>
-        <Header title="The Last of Us" />
-        <main>{children}</main>
+        <Header 
+          title="The Last Of Us"
+          subtitle="When you're lost in the darkness, look for the light."
+        />
+
+        <main>
+          {children}
+        </main>
+
       </body>
     </html>
   );

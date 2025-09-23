@@ -1,41 +1,78 @@
+/* Importa a fonte temática do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* ---- O Container Principal do Header ---- */
 .header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 30px 40px;
-    background: linear-gradient(90deg, #0a1613, #14221d 50%, #2a1f18);
-    color: #e6f0e8;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.4);
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.logo {
-    flex-shrink: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex; /* Alinha o logo e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px 40px; /* Espaçamento interno (vertical e horizontal) */
     
+    background-color: #1a1d1a; /* Cor de fundo escura, quase preta */
+    /* Adiciona uma textura de rachadura e um gradiente para escurecer */
+    background-image: 
+        linear-gradient(rgba(26, 29, 26, 0.85), rgba(26, 29, 26, 0.85)), 
+        url('https://www.transparenttextures.com/patterns/cracks.png');
+    
+    border-bottom: 5px solid #4a5a4a; /* Borda inferior verde musgo */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
 }
 
+/* ---- Div do Logo ---- */
+.logo {
+    margin-right: 25px; /* Espaço entre o logo e o texto */
+    /* Efeito sutil para o logo parecer mais integrado e desgastado */
+    filter: brightness(0.9) grayscale(20%); 
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: brightness(1) grayscale(0%); /* Remove o filtro ao passar o mouse */
+}
+
+/* ---- Div que agrupa os textos ---- */
+.text {
+    flex-grow: 1; /* Faz a div de texto ocupar o espaço restante */
+}
+
+/* ---- Título Principal (h1) ---- */
 .title {
-    font-size: 1.9rem;
-    font-weight: 700;
-    margin: 0;
-    color: #f0f7f4;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Special Elite', monospace; /* Fonte temática de máquina de escrever */
+    color: #d1d1d1; /* Cor de texto cinza claro, não branco puro */
+    font-size: 2.8rem; /* Tamanho grande e impactante */
+    text-transform: uppercase; /* Tudo em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.9); /* Sombra para legibilidade */
+    margin: 0; /* Remove margem padrão */
 }
 
+/* ---- Subtítulo (h2) ---- */
 .subtitle {
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 4px 0 0;
-    color: #c2d1cb;
+    color: #8b948b; /* Verde-acinzentado, menos destaque que o título */
+    font-size: 1.1rem;
+    font-weight: normal; /* Fonte com peso normal */
+    font-style: italic;
+    margin-top: 8px; /* Pequeno espaço acima do subtítulo */
+    margin-bottom: 0;
+}
+
+/* ---- Ajustes para Telas Menores (Responsividade) ---- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Empilha o logo e o texto */
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px; /* Espaço abaixo do logo */
+    }
+
+    .title {
+        font-size: 2rem; /* Diminui a fonte do título */
+    }
+
+    .subtitle {
+        font-size: 1rem; /* Diminui a fonte do subtítulo */
+    }
 }
