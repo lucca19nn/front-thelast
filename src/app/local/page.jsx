@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Principal() {
+export default function Local() {
     const [dados, setDados] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export default function Principal() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/principais`;
+                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/locais   `;
                 const response = await axios.get(apiUrl);
 
                 

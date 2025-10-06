@@ -1,11 +1,9 @@
-// app/principal/page.jsx
-
-"use client";
+    "use client";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Principal() {
+export default function Secundario() {
     const [dados, setDados] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -13,11 +11,9 @@ export default function Principal() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // AJUSTE AQUI: Lembre-se de trocar "/principal" pelo seu endpoint real
                 const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/secundario`;
                 const response = await axios.get(apiUrl);
 
-                console.log("DADOS RECEBIDOS PELA API:", response.data);
                 
                 setDados(response.data);
             } catch (err) {
@@ -39,19 +35,14 @@ export default function Principal() {
         return <div style={{ textAlign: 'center', marginTop: '50px', color: 'red' }}><h1>Erro!</h1><p>{error}</p></div>;
     }
 
-    // ==================================================================
-    // INÍCIO DO RETURN CORRIGIDO
-    // ==================================================================
     return (
         <div style={{ fontFamily: 'sans-serif', padding: '20px' }}>
-            <h1>Personagens Principais</h1>
-            
-            {/* Container para os cards */}
+            <h1>Personagens Secundarios</h1>
+
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
                 
                 {dados.length > 0 ? (
                     dados.map((item) => (
-                        // Card individual para cada item
                         <div key={item.id} style={{ 
                             border: '1px solid #ddd', 
                             borderRadius: '8px', 
@@ -60,22 +51,18 @@ export default function Principal() {
                             boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
                         }}>
                             
-                            {/* Imagem do personagem */}
                             {item.imagem && (
-                                <img 
-                                    src={item.imagem} 
-                                    alt={`Imagem de ${item.nome}`} 
-                                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px' }} 
+                                <img
+                                    src={`${process.env.NEXT_PUBLIC_API_URL}/${item.imagem}`}
+                                    alt={`Imagem de ${item.nome}`}
+                                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px' }}
                                 />
                             )}
-                            
-                            {/* Nome do personagem */}
+
                             <h2 style={{ marginTop: '10px' }}>{item.nome}</h2>
-                            
-                            {/* Descrição */}
+
                             <p style={{ color: '#555', fontSize: '14px' }}>{item.descricao}</p>
-                            
-                            {/* Outros detalhes */}
+
                             <div style={{ marginTop: '15px', fontSize: '14px' }}>
                                 <p><strong>Papel:</strong> {item.papel}</p>
                                 <p><strong>Status:</strong> {item.status}</p>
@@ -89,7 +76,4 @@ export default function Principal() {
             </div>
         </div>
     );
-    // ==================================================================
-    // FIM DO RETURN CORRIGIDO
-    // ==================================================================
 }

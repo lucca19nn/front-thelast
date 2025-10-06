@@ -64,6 +64,23 @@ export default function HomePage() {
                         </div>
                     </div>
 
+                    <div className={styles.categoryCard}>
+                        <Image
+                            src="/image/infectados.jpg"
+                            alt="Infectado de The Last of Us"
+                            width={400}
+                            height={200}
+                            className={styles.cardImage}
+                        />
+                        <div className={styles.cardContent}>
+                            <h3>Locais</h3>
+                            <p>Veja os principais locais da historia</p>
+                            <Link href="./local" className={styles.cardButton}>
+                                Explorar
+                            </Link>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
