@@ -4,10 +4,10 @@
     padding: 20px 40px;
     background-color: #787878;
     background-image: 
-        linear-gradient(rgba(26, 29, 26, 0.85), rgba(26, 29, 26, 0.85)), 
+        linear-gradient(rgba(108, 145, 108, 0.85), rgba(26, 29, 26, 0.85)), 
         url('https://www.transparenttextures.com/patterns/cracks.png');
-    border-bottom: 5px solid #4a5a4a; 
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid #5a855a; 
+    box-shadow: 0px 4px 15px rgba(119, 119, 119, 0.5);
 }
 
 .logo {

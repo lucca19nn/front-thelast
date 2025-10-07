@@ -48,7 +48,7 @@ export default function Secundario() {
                             borderRadius: '8px', 
                             padding: '16px', 
                             width: '300px', 
-                            boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
+                            boxShadow: '0 4px 8px rgba(240, 240, 240, 0.42)' 
                         }}>
                             
                             {item.imagem && (
@@ -61,7 +61,7 @@ export default function Secundario() {
 
                             <h2 style={{ marginTop: '10px' }}>{item.nome}</h2>
 
-                            <p style={{ color: '#555', fontSize: '14px' }}>{item.descricao}</p>
+                            <p style={{ color: '#fff', fontSize: '14px' }}>{item.descricao}</p>
 
                             <div style={{ marginTop: '15px', fontSize: '14px' }}>
                                 <p><strong>Papel:</strong> {item.papel}</p>
