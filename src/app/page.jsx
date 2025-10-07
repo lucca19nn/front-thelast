@@ -6,9 +6,9 @@ export default function HomePage() {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <h1 className={styles.title}>Explore o Universo de The Last of Us</h1>
+                <h1 className={styles.title}>Conheça mais sobre: The Last of Us I e II</h1>
                 <p className={styles.subtitle}>
-                    Selecione uma categoria para ver os detalhes.
+                    "When you're lost in the darkness, look for the light."
                 </p>
 
                 <div className={styles.categoryGrid}>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
                     <div className={styles.categoryCard}>
                         <Image
-                            src="/image/infectados.jpg"
+                            src="/image/fazenda.png"
                             alt="Infectado de The Last of Us"
                             width={400}
                             height={200}

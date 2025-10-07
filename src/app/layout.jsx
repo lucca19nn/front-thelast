@@ -10,10 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <Header 
-          title="The Last Of Us"
-          subtitle="When you're lost in the darkness, look for the light."
-        />
+        <Header/>
 
         <main>
           {children}

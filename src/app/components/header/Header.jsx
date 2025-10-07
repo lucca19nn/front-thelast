@@ -7,15 +7,11 @@ export default function Header({title, subtitle}) {
         <header className={styles.header}>
             <div className={styles.logo}>
                 <Image 
-                    src="/image/logo-thelast.png" 
+                    src="/image/logo.png" 
                     alt="Logo" 
-                    width={100}
+                    width={230}
                     height={90} 
                 />
-            </div>
-            <div className={styles.text}>
-                <h1 className={styles.title}>{title}</h1>
-                <h2 className={styles.subtitle}>{subtitle}</h2>
             </div>
         </header>
     );
