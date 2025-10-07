@@ -1,9 +1,10 @@
-    "use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Link from "next/link"; // Importa o componente Link
 
-export default function Local() {
+export default function Locais() {
     const [dados, setDados] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -11,10 +12,8 @@ export default function Local() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/locais   `;
+                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/locais`;
                 const response = await axios.get(apiUrl);
-
-                
                 setDados(response.data);
             } catch (err) {
                 setError("Não foi possível carregar os dados. Verifique a API e a sua conexão.");
@@ -37,10 +36,23 @@ export default function Local() {
 
     return (
         <div style={{ fontFamily: 'sans-serif', padding: '20px' }}>
-            <h1>Personagens Principais</h1>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+                <Link href="/infectados" passHref>
+                    <button style={{ padding: '10px 20px', backgroundColor: '#299129', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+                        Voltar para Infectados
+                    </button>
+                </Link>
+
+                <Link href="/" passHref>
+                    <button style={{ padding: '10px 20px', backgroundColor: '#299129', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+                        Home
+                    </button>
+                </Link>
+            </div>
+
+            <h1 style={{ textAlign: 'center', margin: '40px 0' }}>Principais Locais</h1>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
-                
                 {dados.length > 0 ? (
                     dados.map((item) => (
                         <div key={item.id} style={{ 
@@ -48,9 +60,8 @@ export default function Local() {
                             borderRadius: '8px', 
                             padding: '16px', 
                             width: '300px', 
-                            boxShadow: '0 4px 8px rgba(240, 240, 240, 0.42)'
+                            boxShadow: '0 4px 8px rgba(240, 240, 240, 0.42)' 
                         }}>
-                            
                             {item.imagem && (
                                 <img
                                     src={`${process.env.NEXT_PUBLIC_API_URL}/${item.imagem}`}
@@ -58,11 +69,8 @@ export default function Local() {
                                     style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px' }}
                                 />
                             )}
-
                             <h2 style={{ marginTop: '10px' }}>{item.nome}</h2>
-
                             <p style={{ color: '#fff', fontSize: '14px' }}>{item.descricao}</p>
-
                             <div style={{ marginTop: '15px', fontSize: '14px' }}>
                                 <p><strong>Papel:</strong> {item.papel}</p>
                                 <p><strong>Status:</strong> {item.status}</p>

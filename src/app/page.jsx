@@ -81,6 +81,23 @@ export default function HomePage() {
                         </div>
                     </div>
 
+                    <div className={styles.categoryCard}>
+                        <Image
+                            src="/image/sobrem.jpg"
+                            alt="Sobre Mim"
+                            width={400}
+                            height={200}
+                            className={styles.cardImage}
+                        />
+                        <div className={styles.cardContent}>
+                            <h3>Sobre Mim</h3>
+                            <p>Veja mais sobre mim</p>
+                            <Link href="./sobre" className={styles.cardButton}>
+                                Explorar
+                            </Link>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
